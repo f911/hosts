@@ -1,7 +1,24 @@
+# =============================================================================
+# Copyright (C) 2016 nick All Rights Reserved
+# Maintainer:   nick
+# Created:      2016-01-24
+# LastModify:   2016-02-29
+# Version:      v1.0
+# Platform:     ubuntu / windows / kali
+# usage:        bash %
+# =============================================================================
+
 #!/bin/bash
 
 echo -e "\n\033[31m\033[40;36m[*] Today is $(date +%F\ %r\ %a)\033[0m"
 
+function hosts_repo_update(ldir, gurl)
+{
+    if [ ! -d "ldir" ]
+}
+if [ ! -d "./highsea_hosts" ]
+then
+    git clone https://github.com/highsea/Hosts.git 
 cd highsea_hosts
 echo -e "\n\033[31m\033[40;36m[+] Now updating the highsea hosts... \033[0m"
 git fetch --all
@@ -36,7 +53,18 @@ cat highsea_hosts/hosts \
     >> final_hosts
 unix2dos final_hosts
 
+#
+# Writing the system hosts file.
+# ------------------------------
 echo -e "\n\033[31m\033[40;33m[+] Writing the system hosts file... \033[0m"
+
+
+
+
+
+
+
+
 hosts_path='/c/Windows/System32/drivers/etc/hosts'
 cat final_hosts > $hosts_path
 
@@ -44,5 +72,9 @@ echo -e "\n\033[31m\033[40;36m[*] Done! \033[0m\n"
 head $hosts_path
 
 
-# vim: se ai si et sw=4 ts=4:
+# in ubuntu 
+
+
+# vim: se ai si et sw=4 ts=4 :
+# EOF
 
